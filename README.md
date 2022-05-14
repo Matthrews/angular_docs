@@ -145,3 +145,49 @@ Demo URL: https://stackblitz.com/edit/angular-ivy-dathnl?file=src/app/app.compon
 | [Angular PWA](https://v12.angular.io/guide/service-worker-intro) | Tools for building Progressive Web Applications (PWAs) including a service worker and Web app manifest. |
 | [Angular Schematics](https://v12.angular.io/guide/schematics) | Automated scaffolding, refactoring, and update tools that simplify development at a large scale. |
 
+
+
+> [Angular First Demo](https://stackblitz.com/edit/angular-rrlxfc?file=src/app/app.component.ts)
+
+
+# Understanding Angular
+
+## Components
+
+Life Circle
+
+ngOnChanges: may not call if you have no template-bound inputs
+
+ngOnInit: Called once
+
+ngDoCheck: Called immediately after `ngOnChanges()` on every change detection run, and immediately after `ngOnInit()` on the first run.
+
+ngAfterContentInit: Called *once* after the first `ngDoCheck()`
+
+ngAfterContentChecked: Called after `ngAfterContentInit()` and every subsequent `ngDoCheck()`.
+
+ngAfterViewInit: Called *once* after the first `ngAfterContentChecked()`.
+
+ngAfterViewChecked: Called after the `ngAfterViewInit()` and every subsequent `ngAfterContentChecked()`.
+
+ngOnDestroy: Called immediately before Angular destroys the directive or component.
+
+Summary: 
+
+ngDoCheck, ngAfterContentChecked, ngAfterViewChecked
+these 3 functions are called frequently
+
+ngDoCheck is called after ngOnChanges
+
+`ngOnChanges` is only called for/if there is an @input variable set by parent
+
+### Use directives to watch the DOM
+
+A spy directive like this can provide insight into a DOM object that you cannot change directly. You can't touch the implementation of a built-in <div>, or modify a third party component. 
+You can, however watch these elements with a directive.
+
+## Templates
+
+## Directives
+
+## Dependency Injesction
